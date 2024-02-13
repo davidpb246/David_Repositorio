@@ -1,7 +1,7 @@
 {
     "name": "CCS",
     "image": "ibmcom/websphere-traditional:8.5.5.22",
-    "runArgs": ["--name=${localEnv:USER}${localEnv:USERNAME}_devcontainer_David_Repositorio"],
+    "runArgs": ["--name=DevcontainerDavid_Repositorio"],
     "workspaceFolder": "/workspaces/David_Repositorio",
     "appPort": [
         "9080:9080",
