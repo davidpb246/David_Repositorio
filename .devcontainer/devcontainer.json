@@ -1,0 +1,40 @@
+{
+    "name": "CCS",
+    "image": "ibmcom/websphere-traditional:8.5.5.22",
+    "runArgs": ["--name=${localEnv:USER}${localEnv:USERNAME}_devcontainer_David_Repositorio", "--add-host=CRI400K:10.136.8.14"],
+    "workspaceFolder": "/worskpaces/David_Repositorio",
+    "containerEnv": {
+        "MAVEN_OPTS": "-Xms512m -Xmx3072m",
+        "CRI400K_USER": "${localEnv:CRI400K_USER}",
+        "CRI400K_PASS": "${localEnv:CRI400K_PASS}"
+    },
+    "appPort": [
+        "9080:9080",
+        "9060:9060",
+        "9443:9443",
+        "9043:9043"
+    ],
+    "postCreateCommand": "time bash /workspaces/David_Repositorio/.devcontainer/scripts/initialize.sh",
+    "postStartCommand": "time bash /workspaces/David_Repositorio/.devcontainer/scripts/startServer.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "mutantdino.resourcemonitor"
+            ],
+            "settings": {
+                "editor.bracketPairColorization.enabled": true,
+                "editor.insertSpaces": true,
+                "editor.detectIndentation": false,
+                "editor.tabSize": 2,
+                "files.encoding": "utf8",
+                "files.eol": "\n",
+                "terminal.integrated.scrollback": 20000,
+                "[jsonc]": {
+                    "editor.defaultFormatter": "vscode.json-language-features",
+                    "editor.tabSize": 4
+                }
+            }
+        }
+    }
+}
