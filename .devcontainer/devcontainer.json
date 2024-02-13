@@ -1,6 +1,10 @@
 {
     "name": "CCS",
-    "image": "ibmcom/websphere-traditional:8.5.5.22",
+    "build": {
+        "context": "..",
+        "dockerfile": "../Dockerfile",
+        "args": {}
+    },
     "runArgs": ["--name=DevcontainerDavid_Repositorio"],
     "workspaceFolder": "/workspaces/David_Repositorio",
     "appPort": [
